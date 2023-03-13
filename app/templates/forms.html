@@ -1,0 +1,33 @@
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div class="block-container">
+        <div>
+            {% if signup %}
+            <div class="input-box">
+                {{ form.first_name.label(class = 'form-label') }}
+                {{ form.first_name(class = 'form-field', placeholder = 'first name...') }}
+            </div>
+            <div class="input-box">
+                {{ form.last_name.label(class = 'form-label') }}
+                {{ form.last_name(class = 'form-field', placeholder = 'last name...') }}
+            </div>    
+            {% endif %}
+            <div class="input-box">
+                {{ form.email.label(class = 'form-label') }}
+                {{ form.email(class = 'form-field', placeholder = 'email address...') }}
+            </div>
+            <div class="input-box">
+                {{ form.password.label(class = 'form-label') }}
+                {{ form.password(class = 'form-field', placeholder = 'password...') }}
+            </div>
+            {{ form.submit_button(class = 'btn') }}
+        </div>
+        <div>
+            {% if signup %}
+            <img src="../static/images/SignUp.jpg" alt="Typewriter">
+            {% else %}
+            <img src="../static/images/SignIn.jpg" alt="Walking up stairs">
+            {% endif %}
+        </div>
+    </div>
+</form>
